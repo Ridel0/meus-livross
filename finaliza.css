@@ -1,0 +1,554 @@
+abody {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 200px; /* Reduzir o tamanho da imagem do produto principal */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.details {
+    text-align: center;
+}
+
+.details p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.related-products {
+    margin-top: 40px;
+}
+
+.related-products h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Menor espaço entre os produtos */
+    justify-content: space-between;
+}
+
+.product-item {
+    text-align: center;
+    flex: 1 1 calc(25% - 15px); /* Ajustar o tamanho das imagens para 4 por linha com espaço entre elas */
+    max-width: calc(25% - 15px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-item p {
+    margin-top: 10px;
+    font-size: 0.9em; /* Reduzir o tamanho da fonte */
+    color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .product-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 600px) {
+    .product-item {
+        flex: 1 1 calc(50% - 15px);
+        max-width: calc(50% - 15px);
+    }
+}
+
+@media (min-width: 900px) {
+    .product-item {
+        flex: 1 1 calc(25% - 15px);
+        max-width: calc(25% - 15px);
+    }
+}
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaço entre os produtos */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.product-item {
+    text-align: center;
+    flex: 1 1 calc(33.333% - 10px); /* Ajusta para 3 itens por linha com espaço entre eles */
+    max-width: calc(33.333% - 10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+    margin: 0; /* Remove margem extra */
+}
+
+.product-item img {
+    width: 100%; /* Ajusta a largura da imagem para ocupar o máximo do container do item */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 120px; /* Define um tamanho máximo para a imagem */
+    border-radius: 8px;
+}
+
+.product-item p {
+    margin-top: 10px;
+    font-size: 0.9em; /* Ajusta o tamanho da fonte dos nomes dos produtos */
+    color: #333;
+}
+
+/* Responsividade para telas pequenas e celulares */
+@media (max-width: 600px) {
+    .product-item {
+        flex: 1 1 calc(25% - 10px); /* Ajusta para 4 itens por linha em telas muito pequenas */
+        max-width: calc(25% - 10px);
+    }
+
+    .product-item img {
+        max-width: 80px; /* Reduz o tamanho máximo da imagem para telas pequenas */
+    }
+}
+
+@media (min-width: 601px) {
+    .product-item {
+        flex: 1 1 calc(33.333% - 10px); /* Ajusta para 3 itens por linha em telas maiores que 600px */
+        max-width: calc(33.333% - 10px);
+    }
+
+    .product-item img {
+        max-width: 120px; /* Ajusta o tamanho máximo da imagem para telas maiores que 600px */
+    }
+}
+
+@media (min-width: 900px) {
+    .product-item {
+        flex: 1 1 calc(25% - 10px); /* Ajusta para 4 itens por linha em telas maiores que 900px */
+        max-width: calc(25% - 10px);
+    }
+
+    .product-item img {
+        max-width: 150px; /* Ajusta o tamanho máximo da imagem para telas maiores que 900px */
+    }
+}
+/* Carrinho de Compras */
+.cart-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000; /* Garantir que o carrinho está sobre outros elementos */
+}
+
+/* Modal */
+.cart-modal {
+    display: none; /* Ocultar modal por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+}
+
+/* Conteúdo da Modal */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ajuste a largura conforme necessário */
+}
+
+/* Botão de Fechar */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Adicione ao seu CSS existente */
+
+/* Estilos gerais para o modal */
+.cart-modal {
+    display: none; /* Ocultar modal por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+}
+
+/* Conteúdo da Modal */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ajuste a largura conforme necessário */
+    max-width: 800px; /* Limita a largura máxima do modal */
+}
+
+/* Estilos para itens do carrinho */
+#cart-items .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+#cart-items .cart-item img {
+    width: 50px; /* Define a largura da imagem no modal */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Total do Carrinho */
+#cart-total {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Botão de Finalizar Compra */
+#checkout-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#checkout-button:hover {
+    background-color: #218838;
+}
+/* Adicione ao seu CSS existente */
+
+/* Bolinha vermelha no carrinho */
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* Container para animação */
+.animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ignora eventos de mouse */
+    overflow: hidden;
+    z-index: 999;
+}
+
+/* Animação de adicionar ao carrinho */
+.animation-image {
+    width: 50px; /* Ajuste conforme necessário */
+    height: auto;
+    pointer-events: none;
+    z-index: 999;
+}
+/* Botão de Remover Item */
+.remove-btn {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 0.8em;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: darkred;
+}/* Estilos para o botão de voltar */
+.back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000; /* Garante que o botão está acima de outros elementos */
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+/* Estilos gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do ícone do WhatsApp */
+#whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    animation: pulse 1.5s infinite;
+}
+
+/* Estilo da imagem do ícone */
+#whatsapp-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@import url('');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+footer{
+    background-color: #415aca;
+    padding: 50px 0;
+}
+.container-footer{
+    max-width: 1400px;
+    padding: 0 4%;
+    margin: auto;
+}
+.row-footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 22px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+    text-transform: uppercase;
+}
+.footer-col ul{
+    list-style: none;
+}
+.footer-col ul li{
+    margin: 10px 0;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #cecdcd;
+    padding-left: 10px;
+}
+.footer-col .medias-socias{
+    margin-top: 30px;
+}
+.footer-col .medias-socias a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid white;
+    transition: all 0.5s ease;
+}
+.footer-col .medias-socias a i{
+    font-size: 20px;
+}
+
+.footer-col .medias-socias a:hover{
+    color: #415aca;
+    background-color: white;
+}
+.footer-col .form-sub input{
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    background-color: #415aca;
+}
+.footer-col .form-sub input::placeholder{
+    color: white;
+}
+.footer-col .form-sub button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px; 
+    font-size: 17px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #415aca;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: white;        
+}
+/* Responsivo */
+@media (max-width: 800px) {
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width:600px) {
+    .footer-col{
+        width: 100%;
+    }
+}/* Contêiner para os botões "Adicionar ao carrinho" */
+.add-to-cart-buttons {
+    display: flex; /* Utiliza flexbox para alinhar os botões horizontalmente */
+    gap: 10px; /* Espaço entre os botões */
+    justify-content: center; /* Centraliza os botões no contêiner */
+    margin-top: 10px; /* Espaço acima dos botões */
+}
+
+/* Estilo para cada botão */
+.add-to-cart-buttons .button {
+    flex: 1; /* Faz com que os botões ocupem espaço igual */
+    text-align: center; /* Alinha o texto no centro do botão */
+    max-width: 200px; /* Limita a largura dos botões */
+    padding: 10px 20px; /* Espaçamento interno dos botões */
+}
+.cart-item img.cart-product-image {
+    width: 50px; /* Define a largura da imagem no carrinho */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+    border-radius: 4px; /* Bordas arredondadas para combinar com o design */
+}
